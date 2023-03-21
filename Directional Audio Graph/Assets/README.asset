@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee12e5a96137c460abac836151148a76, type: 3}
+  m_Name: README
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: f373320f940c04fb49e6833ae4f72fe0, type: 3}
+  title: ADSSE Mini Project
+  sections:
+  - heading: Description
+    text: This is a miniproject for the class Algorithms and Data Structures for
+      Software Engineering. It uses a graph set up to spatialize audio in corridors
+      with regards to distance and direction.
+    linkText: 
+    url: 
+  - heading: Instructions
+    text: Open 'MultipleTurnCorridor' and start walking in Play Mode. In Scene view,
+      click on 'PositionedNode' object and observe that it moves along the graph
+      as you walk around. Try listening closely to the audio in Game view and find
+      the guitar player in the maze.
+    linkText: 
+    url: 
+  - heading: Technical Documentation
+    text: The following will detail the classes.
+    linkText: 
+    url: 
+  - heading: AdjacencyList
+    text: Class used for managing the graph. It holds a list of lists of Node, and
+      a dictionary to look up connected nodes for a given Node. However, it's modular
+      enough to be used for any Type 'K'.
+    linkText: 
+    url: 
+  - heading: AudioGraph
+    text: This MonoBehavior is applied to a game object and handles the creation
+      and management of the graph. It should have child objects that use Node and
+      will go through their connections to create the graph, ensuring that a Node's
+      connection refers to itself too.
+    linkText: 
+    url: 
+  - heading: AudioGraphPositioner
+    text: This MonoBehavior is applied to a desired object that should be placed
+      on the node. In this case, we use an AudioSource for a guitar player. It should
+      reference a graph it should be placed on, a lure object it should follow, and
+      the layers that obstruct the view. We use LineCast to detect if a Node is visible.
+      We traverse the graph from the closest node where the AudioGraphPositioner
+      started, until we find a visible node. Smoothness is acheived by using linear
+      interpolation, so that once a new node comes into view, there is not as noticible
+      sudden change in the panning of the audio source.
+    linkText: 
+    url: 
+  - heading: Node
+    text: This MonoBehavior is used to organize the graph. It draws a gizmo to easily
+      see where the graph, drawing the node and its connections.
+    linkText: 
+    url: 
+  loadedLayout: 0
